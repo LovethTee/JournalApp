@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title><%= title %></title> 
+    
+</head> 
+<body> 
+  <%- include('partials/header') -%>
+
+    <div class="container"> 
+      <h4><%= title %></h4> 
+      <div class="details"> 
+        <div class="card text-xs-center"> 
+            <br> 
+          
+            <div class="md:w-1/2">
+              <img src="imgs/baby2.png" alt="">
+          </div>
+    
+            <div class="bg-gray flex rounded-2xl shadow-lg max-w-5xl p-5 items-center">
+              <h4 class="card-title">Hi <strong> <%= user.userName %></strong>!</h4> 
+              <h6 class="card-text"> 
+                 
+                  <%= user.email %> 
+              </h6> 
+            </div>
+          
+            
+          <div class="flex justify-centre md:justify-start">
+            <a href="/dashboard" class="p-3 px-6 pt-2 text-white bg-red-400 squared-full baseline hover:bg-fuchsia-900">Add a post</a>
+            <a href="/feed" class="p-3 px-6 pt-2 text-white bg-orange-400 squared-full baseline hover:bg-fuchsia-900">Feed</a>
+            <a href="/logout" class="p-3 px-6 pt-2 text-white bg-violet-300 squared-full baseline hover:bg-fuchsia-900">Logout</a>
+  
+          </div> 
+          <!--<button class="bg-white border py-2 w-full rounded-xl mt-5"> Login</button>-->
+      </div>
+   </div> 
+   <%- include('partials/footer') -%>
+
+</body> 
+</html> 
