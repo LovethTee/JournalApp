@@ -3,13 +3,13 @@
 
 ---
 
-# Things to add
+ Things to add
 
 ---
 
-# Tech stack used
+ Tech stack used
 ---
 
-# Lessons Learned
+Lessons Learned
 
 
