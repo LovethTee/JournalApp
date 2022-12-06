@@ -3,10 +3,10 @@ const Journal = require("../models/Journal");
 const Comment = require("../models/Comment");
 
 module.exports = {
-  getDashboard: async (req, res) => {
+  getProfile: async (req, res) => {
     try {
       const journals = await Journal.find({ user: req.user.id });
-      res.render("dashboard.ejs", { journals: journals, user: req.user });
+      res.render("profile.ejs", { journals: journals, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -19,10 +19,10 @@ module.exports = {
       console.log(err);
     }
   },
-  getProfile: async (req, res) => {
+  getJournal: async (req, res) => {
     try {
-      
-      res.render("profile.ejs", { title: 'Profile Page', user : req.user, });
+      const post = await Post.findById(req.params.id);
+      res.render("journal.ejs", { post: post, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -39,26 +39,7 @@ module.exports = {
   createJournal: async (req, res) => {
     try {
       // Upload image to cloudinary
-      let result = await cloudinary.uploader.upload(req.file.path);
-
-      await Journal.create({
-        title: req.body.title,
-        image: result.secure_url,
-        cloudinaryId: result.public_id,
-        caption: req.body.caption,
-        likes: 0,
-        user: req.user.id,
-      });
-      console.log("Post has been added!");
-      res.redirect("/dashboard");
-    } catch (err) {
-      console.log(err);
-    }
-  },
-  getAdd: async (req, res) => {
-    try {
-      // Upload image to cloudinary
-      let result = await cloudinary.uploader.upload(req.file.path);
+      const result = await cloudinary.uploader.upload(req.file.path);
 
       await Journal.create({
         title: req.body.title,
@@ -74,6 +55,25 @@ module.exports = {
       console.log(err);
     }
   },
+  //getAdd: async (req, res) => {
+    //try {
+      // Upload image to cloudinary
+      //let result = await cloudinary.uploader.upload(req.file.path);
+
+      //await Journal.create({
+      //  title: req.body.title,
+      //  image: result.secure_url,
+      //  cloudinaryId: result.public_id,
+      //  caption: req.body.caption,
+      //  likes: 0,
+      //  user: req.user.id,
+      //});
+      //console.log("Post has been added!");
+      //res.redirect("/profile");
+    //} //catch (err) {
+      //console.log(err);
+    //}
+  
   
   likeJournal: async (req, res) => {
     try {

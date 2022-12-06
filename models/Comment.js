@@ -12,7 +12,7 @@ const CommentSchema = new mongoose.Schema({
         required: true,
     },
     user: {
-        type: mongoose.Schema.Types.ObjectId, //specifically going to be a field that links a specific post id to users
+        type: mongoose.Schema.Types.ObjectId, // links a specific post id to users
         ref: "User",
       },
     journal: {

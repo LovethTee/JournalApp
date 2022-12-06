@@ -7,7 +7,7 @@ const JournalSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    require: false,
+    require: true,
   },
   cloudinaryId: {
     type: String,
@@ -17,21 +17,6 @@ const JournalSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  body:{
-    type: String,
-    required: true
-    
-},
-status:{
-    type:String,
-    default:'public',
-    enum: ['public', 'private']
-    
-},
-  //moments: {
-    //type: String,
-    //required: true,
-  //},
   likes: {
     type: Number,
     required: true,
