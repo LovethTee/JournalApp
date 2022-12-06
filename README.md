@@ -5,7 +5,7 @@
 
 ## Mission & Objectives
 
-- To create a space for families to share their experiences as well as gain insight from the experiences of others.
+- Create a space for families to share their experiences as well as gain insight from the experiences of others.
 
 - Users do not have to worry about losing access to information about their experiences.
 
