@@ -1,9 +1,9 @@
 # Introduction
 
-<p>The Preemies Journal is a Full-stack web app designed for Neonatal ICU families to document their experience in the hospital and serve as a source of information for parents who are new to the experience.</p>
+<p>The Preemies Journal is a Full-stack web app designed for Neonatal ICU families to document their NICU experience in the hospital.</p>
 ---
 
-# Mission & Objectives
+## Mission & Objectives
 
 - To create a space for families to share their experiences as well as gain insight from the experiences of others.
 
@@ -11,7 +11,7 @@
 
 ---
 
-# Mission Statement
+
 ## Problems this app solves
 
 - Creates a space to document experiences in real-time for future reference.
@@ -21,14 +21,14 @@
 
 ---
 
-# Goal
+## Goal
 ### MVP
 - Create a basic CRUD app  
 
 ---
 
 
-# Future Optimizations
+## Future Optimizations
 
 - Create the option for private posts as all posts are automatically public to other users.
 - Comment on the posts of other users.
@@ -38,13 +38,13 @@
 
 ---
 
-# Packages/Dependencies used
+## Packages/Dependencies used
 
 - mongoose, express-flash, express, morgan, multer, connect-mongo, ejs, tailwindcsss, morgan, passport-local, nodemon, validator, mongodb, passport, dotenv, bcrypt, express-session, cloudinary.
 
 ---
 
-# Install all dependencies via terminal
+## Install all dependencies via terminal
 
 `npm install`
 
@@ -57,13 +57,13 @@
 
 ---
 
-# Run
+## Run
 
 `npm start`
 
 ---
 
-# Project Links
+## Project Links
 
 - [Project Repo] - (https://github.com/LovethTee/JournalApp)
 - [Project Wireframe] - (https://miro.com/app/board/uXjVPYqXPLs=/?share_link_id=467774451459)
@@ -71,6 +71,6 @@
  
 ---
 
-# Lessons Learned
+## Lessons Learned
 
 
