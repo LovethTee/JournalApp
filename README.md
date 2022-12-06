@@ -20,6 +20,7 @@ The Preemies Journal is a Full-stack web app designed for Neonatal ICU families 
 - Families can easily track progress of new skills learned which improves confidence and readiness to     continue care when the baby is discharged.
 
 ---
+
 # Goal
 ### MVP
 - Create a basic CRUD app  
@@ -47,10 +48,6 @@ The Preemies Journal is a Full-stack web app designed for Neonatal ICU families 
 
 `npm install`
 
----
-
-# Things to add
-
 - Create a `.env` file in config folder and add the following as `key = value`
   - PORT = 6050 (can be any port example: 3000)
   - DB_STRING = `your database URI`
@@ -71,5 +68,9 @@ The Preemies Journal is a Full-stack web app designed for Neonatal ICU families 
 - [Project Repo] - (https://github.com/LovethTee/JournalApp)
 - [Project Wireframe] - (https://miro.com/app/board/uXjVPYqXPLs=/?share_link_id=467774451459)
 
+ 
+---
+
+# Lessons Learned
 
 
