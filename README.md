@@ -1,6 +1,6 @@
 # Introduction
 
-The Preemies Journal is a Full-stack web app designed for Neonatal ICU families to document their experience in the hospital and serve as a source of information for parents who are new to the experience.
+<p>The Preemies Journal is a Full-stack web app designed for Neonatal ICU families to document their experience in the hospital and serve as a source of information for parents who are new to the experience.</p>
 ---
 
 # Mission & Objectives
