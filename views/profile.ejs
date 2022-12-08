@@ -1,59 +1,43 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-    <title><%= title %></title> 
-    
-</head> 
-<body> 
-  <%- include('partials/header') -%>
+<%- include('partials/header') -%>
+<body class="bg-violet-300 w-full "> 
 
-    <div class="container"> 
-      <h4><%= title %></h4> 
-      <div class="details"> 
-        <div class="card text-xs-center"> 
-            <br> 
-          
-            <div class="md:w-1/2">
-              <img src="imgs/baby2.png" alt="">
-          </div>
-    
-            <div class="bg-gray flex rounded-2xl shadow-lg max-w-5xl p-5 items-center">
-              <h4 class="card-title">Hi <strong> <%= user.userName %></strong>!</h4> 
-              <h6 class="card-text"> 
-                 
-                  <%= user.email %> 
-              </h6> 
-            </div>
-          
+        <div class="form-title text-center">
+          <h2 class="text-dark font-bold text-4xl">Profile Page</h2>
+          <h4 class="text-left text-3xl font-bold m-8 p-8"></i>Hi <%= user.userName %> !</h4>
+           
+        </div>
             
-          <!-- <div class="flex justify-centre md:justify-start">
-            <a href="/profile" class="p-3 px-6 pt-2 text-white bg-red-400 squared-full baseline hover:bg-fuchsia-900">Add a post</a>
-            <a href="/feed" class="p-3 px-6 pt-2 text-white bg-orange-400 squared-full baseline hover:bg-fuchsia-900">Feed</a>
-            <a href="/logout" class="p-3 px-6 pt-2 text-white bg-violet-300 squared-full baseline hover:bg-fuchsia-900">Logout</a>
-  
-          </div> 
-          <button class="bg-white border py-2 w-full rounded-xl mt-5"> Login</button> -->
-      </div>
-   </div> 
-   <div class="mt-5">
-    <h2>Add a post</h2>
-    <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-      <div class="mb-3">
-          <label for="title" class="form-label">Title</label>
-          <input type="text" class="form-control" id="title" name="title">
-      </div>
-      <div class="mb-3">
-        <label for="caption" class="form-label">Caption</label>
-        <textarea class="form-control" id="caption" name="caption"></textarea>
-      </div>
-      <div class="mb-3">
-        <label for="imgUpload" class="form-label">Image</label>
-        <input type="file" class="form-control" id="imageUpload" name="file">
-      </div>
-      <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-    </form>
-  </div>
-</div>
+              <form action="/journal/createJournal" enctype="multipart/form-data" method="POST" class="p-12  m-10 gap-4 text-left bg-purple-300 flex rounded-2xl shadow-lg max-w-5xl p-5 items-center ">
+                <div class=" text-2xl text-white w-full">
+                  <span class="text-purple-900 text-xl font-bold mb-10">Add a Post</span>
+                  <div class="form group">
+                    <label for="title" class="form-label text-2xl text-orange-900 mt-4">Title</label>
+                    <input type="text" class="form-control" id="title" name="title">
+                  </div>
+                  <div class="form-group">
+                      <label for="caption" class="form-label text-2xl text-orange-900">Share Your Story</label>
+                      <textarea class="form-control bg-violet-400 w-100 h-40 " id="caption" name="caption"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="imgUpload" class="form-label text-2xl text-orange-900">Image</label>
+                    <input type="file" class="form-control bg-red-300 " id="imageUpload" name="file">
+                  </div>
+                </div>
+                <div class=" flex flex-row mb-32">
+                  <button class="bg-fuchsia-900 font-bold rounded-xl text-white px-5 py-2 justify-center items-center hover:bg-red-400 mt-4 mb-4 block">SUBMIT</button>
+                </div>
+      
+              </form>
+              
+              <h3 class="text-violet-900 text-4Xl text-center font-bold mb-10">YOUR POSTS</h3>
+
+
+
+
+
+    
+
+<!--- fix the styling for the user's posts-->
 <div class="col-6">
 <ul class="row list-unstyled">
 <% for(var i=0; i<journals.length; i++) {%>

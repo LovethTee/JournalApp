@@ -1,0 +1,56 @@
+<body class="bg-violet-300">
+    <div class="container mt-10 flex-row mx-auto px-2 ">
+      <button class="bg-fuchsia-300 hover:bg-purple-700 text-purple-900 font-bold py-2 px-4 rounded"><a href="/profile">Return to Profile</a></button>
+      <button class="bg-red-400 hover:bg-red-300 text-white font-bold py-2 px-4 rounded"><a href="/logout">Logout</a></button>
+    </div>
+    <div class="max-w-sm mx-auto  mt-20 flex p-6 bg-fuchsia-900 rounded-lg shadow-xl">
+      <div class="flex-shrink-0">
+        
+          <li class="card">
+              <img class="h-full w-6" src="imgs/baby.jpg">
+          </li>
+        
+      </div>
+      <div class="ml-6 pt-1">
+        <h4 class="text-xl text-violet-400"> Feed
+        </h4>
+          <p class="text-base text-violet-300">Checkout your feed</p>
+      </div>
+    </div>
+    <!--card columns-->
+    <div class="container-mt-5">
+  
+      <div class="md:flex">
+        <div class="flex-1 text-gray-700 text-center px-5 py-5 m-2 rounded">
+          <div class="lg:flex lg:items-center">
+            <div class="lg:flex-shrink-0">
+              <% for(var i=0; i<journals.length; i++) {%>
+              <a href="/journal/<%= journals[i]._id%>">
+              <img class="rounded-lg lg:w-64"  src="<%= journals[i].image%>"> </a>
+              <% } %>
+            </div>
+            <div class="mt-4 lg:mt-0 lg:ml-6">
+              <div class="uppercase tracking-wide text-sm text-purple-400 font-bold">
+                Post
+              </div>
+              
+              <a href="#" class="block mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline">Story</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  
+  
+  </body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   

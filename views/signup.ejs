@@ -1,6 +1,8 @@
 <%- include('partials/header') -%>
-    <main class="container">
-        <div class="row justify-content-center">
+
+    <div class="mt-10 container">
+        <div class="bg-fuchsia-900 flex rounded-2xl shadow-lg row justify-content-center">
+            
             <section class="col-6 mt-5">
                 <% if (locals.messages.errors) { %>
                     <% messages.errors.forEach( el => { %>
@@ -12,28 +14,36 @@
                         <div class="alert alert-info"><%= el.msg %></div>
                     <% }) %>    
                 <% } %>
+                <h1 class="font-bold text-3xl text-center text-violet-900 rounded-full bg-white mb-8 ">Register</h1>
                 <form action="/signup" method="POST">
                     <div class="mb-3">
-                        <label for="userName" class="form-label">User Name</label>
+                        <label for="firstName" class="form-label text-2xl text-red-300">First Name</label>
+                        <input type="text" class="form-control" id="userName" name="userName">
+                      </div>
+                      <div class="mb-3">
+                        <label for="lastName" class="form-label text-2xl text-red-300">Last Name</label>
+                        <input type="text" class="form-control" id="userName" name="userName">
+                      </div>
+                      <div class="mb-3">
+                        <label for="userName" class="form-label text-2xl text-red-300">User Name</label>
                         <input type="text" class="form-control" id="userName" name="userName">
                       </div>
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <label for="exampleInputEmail1" class="form-label text-2xl text-red-300">Email address</label>
                       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                      <div id="emailHelp" class="form-text text-l text-red-300">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
-                      <label for="password" class="form-label">Password</label>
+                      <label for="password" class="form-label text-2xl text-red-300">Password</label>
                       <input type="password" class="form-control" id="password" name="password">
                     </div>
                     <div class="mb-3">
-                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <label for="confirmPassword" class="form-label text-2xl text-red-300">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
                       </div>
-                      <button class="bg-fuchsia-700 rounded-xl text-white px-16 py-2 justify-center items-center">Submit</button>
+                      <button class="bg-fuchsia-300 font-bold rounded-xl text-violet-900 px-16 py-2 justify-center items-center hover:bg-red-400 mt-4 mb-4">SUBMIT</button>
                     
                   </form>
             </section>
         </div>
-    </main>
-
+    </div>
