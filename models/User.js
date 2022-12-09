@@ -7,14 +7,14 @@ const UserSchema = new mongoose.Schema({
     unique: true,
     required: true
    },
-  firstName:{
-    type: String, 
-    required: true
-  },
-  lastName:{
-    type: String, 
-    required: true
-  },
+  //firstName:{
+    //type: String, 
+    //required: true
+  //},
+  //lastName:{
+    //type: String, 
+    //required: true
+  //},
   email: { 
     type: String, 
     unique: true 
@@ -26,6 +26,7 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  
   password: String,
 });
 

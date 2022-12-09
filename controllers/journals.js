@@ -36,7 +36,28 @@ module.exports = {
       console.log(err)
       return res.render('error/500');
     }
+
   },
+  //show edit page
+  getEdit: async (req, res) => {
+    try{
+      const journal = await Journal.findOne({
+        _id: req.params.id,
+      }).lean()
+      if(!journal){
+        return res.render('erroe/404')
+      }
+      if(journal.user != req.user.id){
+        res.redirect('/feed')
+      } else {
+        res.render('edit.ejs', { journal: journal, user: req.user })
+      }
+    } catch (err) {
+      console.error (err)
+      return res.render ('error/500')
+    }
+  },
+
   createJournal: async (req, res) => {
     try {
       // Upload image to cloudinary
@@ -74,6 +95,31 @@ module.exports = {
       console.log(err);
     }
   },
+
+  //update Journal
+  editJournal: async (req, res) => {
+    
+      let journal = await Journal.findById({
+        _id: req.params.id,
+    }).lean()
+
+    if(!journal){
+      return res.render('error/404')
+    }
+    if(journal.user != req.user.id){
+      res.redirect('/feed')
+    }else {
+      journal = await Journal.findOneAndUpdate ({
+        _id: req.params.id}, req.body.caption, {
+        new : true,
+        runValidators : true
+      })
+      res.direct('/feed')
+    }
+  },
+    
+  
+
   deleteJournal: async (req, res) => {
     try {
       // Find post by id

@@ -7,7 +7,7 @@
            
         </div>
             
-              <form action="/journal/createJournal" enctype="multipart/form-data" method="POST" class="p-12  m-10 gap-4 text-left bg-purple-300 flex rounded-2xl shadow-lg max-w-5xl p-5 items-center ">
+              <form action="/journal/createJournal" enctype="multipart/form-data" method="POST" class="p-12 m-10 gap-4 flex flex-col justify-center bg-purple-300 rounded-2xl shadow-lg max-w-4xl  p-5 space-y-3 items-center ">
                 <div class=" text-2xl text-white w-full">
                   <span class="text-purple-900 text-xl font-bold mb-10">Add a Post</span>
                   <div class="form group">
@@ -20,7 +20,7 @@
                   </div>
                   <div class="form-group">
                     <label for="imgUpload" class="form-label text-2xl text-orange-900">Image</label>
-                    <input type="file" class="form-control bg-red-300 " id="imageUpload" name="file">
+                    <input type="file" class="form-control bg-red-300 w-full " id="imageUpload" name="file">
                   </div>
                 </div>
                 <div class=" flex flex-row mb-32">
@@ -31,30 +31,48 @@
               
               <h3 class="text-violet-900 text-4Xl text-center font-bold mb-10">YOUR POSTS</h3>
 
-
-
-
-
+              <main id="site-main">
+                <div class="container">
+                  <div class="box-nav d-flex-justify-between mb-10 text-center">
+                    
+                  </div>
+                  <form action="/" method="POST">
+                    <table class="table">
+                      <thead class="thead-dark bg-purple-300 b-purple-900  text-xl">
+                        <tr>
+                          
+                          
+                          <th>Date </th>
+                          <th>Email</th>
+                          
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="hover:bg-fuchsia-300">
+                          <td ><%= user.createdAt %></td>
+                          <td><%= user.email %></td>
+                          
+                        </tr>
     
+                      </tbody>
+                    </table>
+                  </form>
+                </div>
+              </main>
 
-<!--- fix the styling for the user's posts-->
-<div class="col-6">
-<ul class="row list-unstyled">
-<% for(var i=0; i<journals.length; i++) {%>
-  <li class="col-6 justify-content-between mt-5">
-    <a href="/journal/<%= journals[i]._id%>">
-      <img class="img-fluid" src="<%= journals[i].image%>">
-    </a>
-  </li>
-<% } %>
-</ul>
-<div class="row justify-content-center mt-5">
-  <a class="btn btn-primary" href="/feed">Return to Feed</a>
-</div>  
-</div>  
-</div>
-</div>
-</div>
-<%- include('partials/footer') -%>
+              <div class=" py-2 px-2 justify-center flex-row m-10 ">
+                  <ul class="row list-unstyled">
+                      <% for(var i=0; i<journals.length; i++) {%>
+                          <li class="col-6 justify-content-between mt-5">
+                              <a href="/journal/<%= journals[i]._id%>">
+                                 <img class="img-fluid" src="<%= journals[i].image%>">
+                              </a>
+                          </li>
+                      <% } %>
+                  </ul>
+          <div class=" flex flex-row mb-32 justify-content-center p-12">
+                <button class="bg-fuchsia-900 font-bold rounded-xl text-white px-5 py-2 justify-center items-center hover:bg-red-400 mt-4 mb-4 block"><a href="/feed">Return to Feed</a></button>
+
+          </div>
 </body> 
-</html> 

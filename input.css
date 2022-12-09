@@ -2,61 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background-color: rgb(109, 55, 109);
-    background-repeat: no-repeat;
-    background-size: 800px;
-    background-position: 90% -25% ;
-}
-@media (max-width:576px){
-    body{
-        background-position: 50px -50px;
-        background-size: 500px;
-    }
-    
-}
-/* Hamburger menu */
-.hamburger {
-    cursor: pointer;
-    width:24px;
-    height:24px;
-    transition: all 0.25s;
-    position:relative;
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Aref+Ruqaa+Ink&family=Diplomata+SC&family=Gentium+Book+Plus:ital@1&family=Merriweather&family=Mingzat&family=Mukta&family=Nerko+One&family=Noto+Sans+Display&family=Roboto+Slab&family=Source+Sans+Pro&family=Ubuntu&display=swap');
 
-
+.login-container{
+    width: 400px;
+    margin-top: 50px;
+    text-align:center;
+    color:blueviolet;
 }
 
-.hamburger-top,
-.hamburger-middle,
-.hamburger-bottom {
-    position:absolute;
-    top:0;
-    left:0;
-    width: 24px;
-    height:2px;
-    background: rgb(11, 8, 11);
-    transform: rotate(0);
-    transition: all 0.5s;
+p{
+  font-family: 'Ubuntu', sans-serif ;
 }
+a, span{
+  font-family: 'Roboto Slab', serif;
+}
+h1, h2, h3, h5{
+  font-family: 'Merriweather', serif;
+}
+label, input{
+  font-family: 'Nerko One', cursive;
+}
+span, h4 {
+  font-family: 'Noto Sans Display', sans-serif;
 
-.hamburger-middle{
-    transform: translateY(7px);
-}
-.hamburger-bottom{
-    transform: translate(14px);
-}
-
-.open{
-    transform: rotate(90deg);
-    transform: translate(0px);
-}
-.open .hamburger-top{
-    transform:rotate(45deg) translateY(6px) translate(6px);
-}
-.open .hamburger-middle{
-    display:none;
-}
-
-.open .hamburger-bottom{
-    transform:rotate(-45deg) translateY(6px) translate(-6px);
 }

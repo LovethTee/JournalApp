@@ -2,7 +2,7 @@
 
     <body class="bg-violet-300"> 
       <div class="container mt-4 flex-row mx-auto mb-10 px-2 ">
-        <button class="bg-fuchsia-300 hover:bg-purple-700 text-black font-bold py-2 px-4 rounded"><a href="/profile">Return to Profile</a></button>
+        <button class="bg-fuchsia-300 hover:bg-purple-700 text-black font-bold py-2 px-4 rounded"><a href="/profile"><i class="fa-solid fa-house-user"></i></a></button>
         <button class="bg-red-400 hover:bg-red-300 text-white font-bold py-2 px-4 rounded"><a href="/logout">Logout</a></button>
       </div>
   
@@ -17,8 +17,6 @@
                 <table class="table">
                   <thead class="thead-dark bg-purple-300 b-purple-900  text-xl">
                     <tr>
-                      <th>Name</th>
-                      <th>Title</th>
                       <th>Date </th>
                       <th>Image</th>
                       <th>Story</th>
@@ -27,18 +25,20 @@
                   </thead>
                   <tbody>
                     <tr class="hover:bg-fuchsia-300">
-                      <td >Test</td>
-                      <td>Baby #1</td>
-                      <td>Dec 7/22</td>
+                      
+                      <td>date</td>
                       <td>baby.png</td>
-                      <td>test test</td>
+                      <td>...</td>
                       <td>
                         <a href="#" class="btn-border  update p-1 hover:bg-red-300">
                           <span class="text-gradient"><i class="fa-solid fa-pen-to-square"></i></span>
                         </a>
-                        <a href="#" class="btn-border  update p-1 hover:bg-red-400">
-                          <span class="text-gradient"><i class="fa-solid fa-trash"></i></i></span>
-                        </a>
+                        
+                        <form
+                        action="#"
+                        method="POST"><input type="hidden" name="_method" value="DELETE"
+                        class="btn-border  update p-1 hover:bg-red-400"><span class="text-gradient"><i class="fa-solid fa-trash"></i></span></form>
+                  
                       </td>
                   
 
@@ -49,6 +49,19 @@
               </form>
             </div>
           </main>
+          <div class="container">
+            <div class="row justify-content-center mt-5">
+              <ul class="row list-unstyled">
+                <% for(var i=0; i<journals.length; i++) {%>
+                  <li class="col-6 justify-content-between mt-5">
+                    <a href="/journal/<%= journals[i]._id%>">
+                      <img class="img-fluid" src="<%= journals[i].image%>">
+                    </a>
+                  </li>
+                <% } %>
+                </ul>
+            </div>
+          </div>  
 
 
 

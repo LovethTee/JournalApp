@@ -2899,6 +2899,10 @@ html {
   width: 0.25rem;
 }
 
+.w-2 {
+  width: 0.5rem;
+}
+
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -2913,6 +2917,14 @@ html {
 
 .max-w-5xl {
   max-width: 64rem;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
 }
 
 .flex-1 {
@@ -2993,6 +3005,12 @@ html {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .self-end {
