@@ -64,7 +64,7 @@
 ---
 
 ## Project Links
-
+- [Link to MVP](https://JournalApp-1.lovethtee.repl.co)
 - [Project Repo](https://github.com/LovethTee/JournalApp)
 - [Project Wireframe](https://miro.com/app/board/uXjVPYqXPLs=/?share_link_id=467774451459)
 
