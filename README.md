@@ -65,8 +65,8 @@
 
 ## Project Links
 
-- [Project Repo] - (https://github.com/LovethTee/JournalApp)
-- [Project Wireframe] - (https://miro.com/app/board/uXjVPYqXPLs=/?share_link_id=467774451459)
+- [Project Repo](https://github.com/LovethTee/JournalApp)
+- [Project Wireframe](https://miro.com/app/board/uXjVPYqXPLs=/?share_link_id=467774451459)
 
  
 ---
