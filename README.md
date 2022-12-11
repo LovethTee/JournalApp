@@ -40,7 +40,7 @@
 
 ## Packages/Dependencies used
 
-- mongoose, express-flash, express, morgan, multer, connect-mongo, ejs, tailwindcsss, morgan, passport-local, nodemon, validator, mongodb, passport, dotenv, bcrypt, express-session, cloudinary.
+- mongoose, express-flash, express, morgan, multer, connect-mongo, ejs, tailwindcss, morgan, passport-local, nodemon, validator, mongodb, passport, dotenv, bcrypt, express-session, cloudinary.
 
 ---
 
