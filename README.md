@@ -1,6 +1,7 @@
 # Introduction
 
 <p>The Preemies Journal is a Full-stack web app designed for Neonatal ICU families to document their NICU experience in the hospital.</p>
+
 ---
 
 ## Mission & Objectives
@@ -23,24 +24,24 @@
 
 ## Goal
 ### MVP
-- Create a basic CRUD app  
+- Create a basic CRUD app utilising the MVC architectural process.
 
 ---
 
 
 ## Future Optimizations
 
-- Create the option for private posts as all posts are automatically public to other users.
-- Comment on the posts of other users.
-- Search for individual posts from feed.
+- Enable logged-in user to edit posts.
+- Create the option for private posts as all posts are currently public to other users.
+- Comment on the posts of other users. :white_check_mark:
+- Search for individual posts from feed. :white_check_mark:
 - Detailed breakdown of posts into smaller sections instead of one big post eg. section for updates, new skills, goals for the week, how families are feeling (anxious, excited etc.) 
-
 
 ---
 
 ## Packages/Dependencies used
 
-- mongoose, express-flash, express, morgan, multer, connect-mongo, ejs, tailwindcsss, morgan, passport-local, nodemon, validator, mongodb, passport, dotenv, bcrypt, express-session, cloudinary.
+- mongoose, express-flash, express, morgan, multer, connect-mongo, ejs, tailwindcss, morgan, passport-local, nodemon, validator, mongodb, passport, dotenv, bcrypt, express-session, cloudinary.
 
 ---
 
@@ -64,9 +65,9 @@
 ---
 
 ## Project Links
-
-- [Project Repo] - (https://github.com/LovethTee/JournalApp)
-- [Project Wireframe] - (https://miro.com/app/board/uXjVPYqXPLs=/?share_link_id=467774451459)
+- [Link to MVP](https://JournalApp-1.lovethtee.repl.co)
+- [Project Repo](https://github.com/LovethTee/JournalApp)
+- [Project Wireframe](https://miro.com/app/board/uXjVPYqXPLs=/?share_link_id=467774451459)
 
  
 ---
