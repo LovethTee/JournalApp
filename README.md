@@ -32,10 +32,9 @@
 ## Future Optimizations
 
 - Create the option for private posts as all posts are currently public to other users.
-- Comment on the posts of other users.
-- Search for individual posts from feed.
+- Comment on the posts of other users. :white_check_mark:
+- Search for individual posts from feed. :white_check_mark:
 - Detailed breakdown of posts into smaller sections instead of one big post eg. section for updates, new skills, goals for the week, how families are feeling (anxious, excited etc.) 
-
 
 ---
 
