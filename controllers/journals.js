@@ -40,22 +40,14 @@ module.exports = {
   },
   //show edit page
   getEdit: async (req, res) => {
-    try{
-      const journal = await Journal.findOne({
-        _id: req.params.id,
-      }).lean()
-      if(!journal){
-        return res.render('erroe/404')
-      }
-      if(journal.user != req.user.id){
-        res.redirect('/feed')
-      } else {
-        res.render('edit.ejs', { journal: journal, user: req.user })
-      }
-    } catch (err) {
-      console.error (err)
-      return res.render ('error/500')
-    }
+   
+      const id = req.params.id;
+      Journal.find({}, (err, journal)=>{
+        res.render("edit.ejs", {
+          journals: journal, user: id
+        });
+      });
+      
   },
 
   createJournal: async (req, res) => {
@@ -98,25 +90,22 @@ module.exports = {
 
   //update Journal
   editJournal: async (req, res) => {
-    
-      let journal = await Journal.findById({
-        _id: req.params.id,
-    }).lean()
+    try{
 
-    if(!journal){
-      return res.render('error/404')
+     await Journal.findOneAndUpdate (
+      {
+        _id: req.params.id}, {caption
+        : req.body.caption}
+        
+     );
+      console.log("Post edited");
+      res.redirect(`/journal/${req.params.id}`);
+    } catch (err) {
+      console.log(err);
     }
-    if(journal.user != req.user.id){
-      res.redirect('/feed')
-    }else {
-      journal = await Journal.findOneAndUpdate ({
-        _id: req.params.id}, req.body.caption, {
-        new : true,
-        runValidators : true
-      })
       res.direct('/feed')
     }
-  },
+  ,
     
   
 

@@ -9,15 +9,19 @@
       <section  class="p-12 m-10 gap-4 flex flex-col justify-center bg-purple-300 rounded-2xl shadow-s  p-5 space-y-3 items-center ">
         <div class=" text-2xl text-white w-full">
           <div class='mt-1 mb-10 bg-purple-300'>
-          <%if(journal.user == user.id){ %>
-            <form
-              action="/journal/deleteJournal/<%= journal.id %>?_method=DELETE"
-              method="POST"
-              class="flex-row"
-            >
-              <button class="bg-violet-300 hover:bg-purple-700 text-black font-bold py-2 px-4 rounded" type="submit"><i class="fa-solid fa-trash"></i></button>
-            </form>
-            <%}%></div>
+            <%if(journal.user == user.id){ %>
+              <form
+                action="/journal/deleteJournal/<%= journal.id %>?_method=DELETE"
+                method="POST"
+                class="flex-row"
+              >
+                <button class="bg-violet-300 hover:bg-purple-700 text-black font-bold py-2 px-4 rounded" type="submit"><i class="fa-solid fa-trash"></i></button>
+              </form>
+
+            <%}%>
+            <a href="/edit/<%=journal._id %>"
+              class="edit"><span class="fas fa-edit"></span></a>
+          </div>
           <img class="img-fluid" src="<%= journal.image%>" />
           <p class="mt-10 mb-10 text-orange-900 text-sm text-center"><%= journal.createdAt %></p>
           
