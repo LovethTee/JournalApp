@@ -31,6 +31,7 @@
 
 ## Future Optimizations
 
+- Enable logged-in user to edit posts.
 - Create the option for private posts as all posts are currently public to other users.
 - Comment on the posts of other users. :white_check_mark:
 - Search for individual posts from feed. :white_check_mark:
