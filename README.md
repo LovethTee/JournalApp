@@ -24,7 +24,7 @@
 
 ## Goal
 ### MVP
-- Create a basic CRUD app  
+- Create a basic CRUD app utilising the MVC architectural process.
 
 ---
 
