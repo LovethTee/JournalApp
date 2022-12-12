@@ -19,6 +19,7 @@ module.exports = {
       console.log(err);
     }
   },
+
   getJournal: async (req, res) => {
     try {
       const journal = await Journal.findById(req.params.id);
@@ -27,6 +28,7 @@ module.exports = {
       console.log(err);
     }
   },
+  //enable comments
   getJournal: async (req, res) => {
     try {
       const journal = await Journal.findById(req.params.id);
@@ -39,16 +41,24 @@ module.exports = {
 
   },
   //show edit page
-  getEdit: async (req, res) => {
+  //getEdit: async (req, res) => {
    
-      const id = req.params.id;
-      Journal.find({}, (err, journal)=>{
-        res.render("edit.ejs", {
-          journals: journal, user: id
-        });
-      });
-      
-  },
+  //    const id = req.params.id;
+  //    Journal.find({}, (err, journal)=>{
+  //      res.render("edit.ejs", {
+  //        journals: journal, user: id
+  //      });
+  //    });
+   //   
+  //},
+  getEdit: async (req, res) => {
+  try {
+    const journals = await Journal.find({ user: req.user.id });
+    res.render("edit.ejs", { journals: journals, user: req.user });
+  } catch (err) {
+    console.log(err);
+  }
+},
 
   createJournal: async (req, res) => {
     try {

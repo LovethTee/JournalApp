@@ -1,71 +1,69 @@
 <%- include('partials/header') -%>
-
+<body class="bg-purple-400">
 <div class="container-title text-center ">
-  <h4 class="text-dark font-bold text-4xl"><%= journal.title %></h4>
-  
-  
+  <h4 class="text-orange-900 mt-4 text-3xl"><%= journal.title %></h4>
 </div>
-    
       <section  class="p-12 m-10 gap-4 flex flex-col justify-center bg-purple-300 rounded-2xl shadow-s  p-5 space-y-3 items-center ">
         <div class=" text-2xl text-white w-full">
-          <div class='mt-1 mb-10 bg-purple-300'>
+          <div class='mt-1 mb-2  text-right'>
+            
             <%if(journal.user == user.id){ %>
               <form
                 action="/journal/deleteJournal/<%= journal.id %>?_method=DELETE"
                 method="POST"
                 class="flex-row"
               >
-                <button class="bg-violet-300 hover:bg-purple-700 text-black font-bold py-2 px-4 rounded" type="submit"><i class="fa-solid fa-trash"></i></button>
-              </form>
-
+                <button class="bg-fuchsia-700 text-black font-bold py-2 px-4 rounded-2xl hover:bg-orange-300" type="submit"><i class="fa-solid fa-trash"></i></button>
+              </form> 
             <%}%>
-            <a href="/edit/<%=journal._id %>"
-              class="edit"><span class="fas fa-edit"></span></a>
+
           </div>
-          <img class="img-fluid" src="<%= journal.image%>" />
-          <p class="mt-10 mb-10 text-orange-900 text-sm text-center"><%= journal.createdAt %></p>
-          
-          
-          
-          
-          
+          <img class="img-fluid rounded-2xl" src="<%= journal.image%>" />
+            <p class="mt-10 mb-10 text-orange-900 text-sm text-center"><%= journal.createdAt %></p>
+            <div class="mt-5 p-8 mt-8 rounded-xl border flex flex-col space-y-12 text-violet-900"><p class="text-center text-red-900 text-underline-offset: auto"><%=journal.title %></p><%= journal.caption %></div>
+          <a href="/edit/<%=journal._id %>"
+              class="edit"><span class="fas fa-edit"></span></a>
+
         </div>
+        <div class="likes">
         
           <form
             class="bg-purple-300"
             action="/journal/likeJournal/<%= journal.id %>?_method=PUT"
             method="POST"
           >
-          <button class="bg-fuchsia-300 hover:bg-purple-700 text-black font-bold py-2 px-4 rounded" type="submit"><i class="fa-solid fa-heart"></i><%= journal.likes %></button>
+          <button class="bg-fuchsia-300 hover:bg-red-400 text-black font-bold py-2 px-4 rounded-xl" type="submit"><i class="fa-solid fa-heart"></i><%= journal.likes %></button>
           </form>
-          </div>
+          
           
         </div>
-    
-    
-</div>
-<div class="mt-5 p-8 mt-8 rounded-xl border flex flex-col space-y-12 md:w-1/2">
-  <h2 class="max-w-md text-3xl font-bold text-center md:text-left">Add a Comment</h2>
-  <form action="/comment/createComment/<%= journal._id%>" class="text-left" method="POST">
-    <div class="mb-3">
-        <label for="comment" class="form-label">Comment</label>
-        <input type="text" class="form-control" id="comment" name="comment">
-    </div>
-    
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
 
-        <ul class="md:w-1/2" > 
+    
+      <div class="mt-5 p-8 mt-8 rounded-xl border flex flex-col space-y-12 md:w-1/2">
+        <h2 class="max-w-md text-3xl font-bold text-center md:text-left">Add a Comment</h2>
+        
+        <form action="/comment/createComment/<%= journal._id%>" class="text-left" method="POST">
+          <div class="mb-3">
+              <label for="comment" class="form-label">Comment</label>
+              <input type="text" class="form-control" id="comment" name="comment">
+          </div >
+          <button type="submit" class="btn btn-primary  hover:bg-fuchsia-900">Submit</button>
+        </form>
+        
+      </div>
+         
+      <div>
+        <ul class="w-full" > 
   
           <% for(var i=0; i<comments.length; i++) {%> 
             <li class="max-w-sm text-center text-black md:text-left ">
-             <span class= "text-orange-900 px-8"><%= user.userName %> commented - </span>  <%= comments[i].comment%> 
-              <hr class="border-gray-400">
+             <span class= "text-orange-900 px-8"><%= user.userName %> commented -</span><%= comments[i].comment%> 
+              <hr class="border-gray-400 w-full">
                 </li>
           <% } %>
     
         </ul>
+      </div>
 
         <div class="container mt-4 flex-row mx-auto mb-10 px-2 ">
           <button class="bg-orange-300 hover:bg-purple-700 text-black font-bold py-2 px-4 rounded"><a href="/profile"><i class="fa-solid fa-house-user"></i></a></button>
@@ -73,4 +71,5 @@
         </div>
 
 </section>
-<%- include('partials/footer') -%>
+
+</body>
