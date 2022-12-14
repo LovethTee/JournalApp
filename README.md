@@ -1,6 +1,6 @@
 # Introduction
 
-<p>The Preemies Journal is a Full-stack web app designed for Neonatal ICU families to document their NICU experience in the hospital.</p>
+<p>The Preemies Journal is a Full-stack web app designed for Neonatal ICU families to document their NICU experience in the hospital. The purple theme for this project represents and supports World Prematurity Day.</p>
 
 ---
 
