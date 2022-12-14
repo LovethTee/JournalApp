@@ -9,45 +9,10 @@
           <main id="site-main">
             <div class="container">
               <div class="box-nav d-flex-justify-between mb-10 text-center">
-                <a href="/" class="border-shadow ">
-                  <span class="text-gradient text-4xl p-5 mb-10 ">Feed <i class="fa-solid fa-users"></i></i></span>
+                <a href="/feed" class="border-shadow ">
+                  <span class="text-gradient text-4xl border rounded-2xl p-5 mb-10 ">Feed <i class="fa-solid fa-users"></i></i></span>
                 </a>
               </div>
-              <form action="/" method="POST">
-                <table class="table">
-                  <thead class="thead-dark bg-purple-300 b-purple-900  text-xl">
-                    <tr>
-                      <th>Date </th>
-                      <th>Image</th>
-                      <th>Story</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="hover:bg-fuchsia-300">
-                      
-                      <td>date</td>
-                      <td>baby.png</td>
-                      <td>...</td>
-                      <td>
-                        <a href="#" class="btn-border  update p-1 hover:bg-red-300">
-                          <span class="text-gradient"><i class="fa-solid fa-pen-to-square"></i></span>
-                        </a>
-                        
-                        <form
-                        action="#"
-                        method="POST"><input type="hidden" name="_method" value="DELETE"
-                        class="btn-border  update p-1 hover:bg-red-400"><span class="text-gradient"><i class="fa-solid fa-trash"></i></span></form>
-                  
-                      </td>
-                  
-
-                    </tr>
-
-                  </tbody>
-                </table>
-              </form>
-            </div>
           </main>
           <div class="container">
             <div class="row justify-content-center mt-5">
@@ -55,6 +20,7 @@
                 <% for(var i=0; i<journals.length; i++) {%>
                   <li class="col-6 justify-content-between mt-5">
                     <a href="/journal/<%= journals[i]._id%>">
+                      <p class="rounded-2xl max-h-md text-center font-bold mb-2"><%= journals[i].title%></p>
                       <img class="img-fluid rounded-2xl max-h-md" src="<%= journals[i].image%>">
                     </a>
                   </li>
