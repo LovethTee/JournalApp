@@ -20,7 +20,7 @@
           </div>
           <img class="img-fluid rounded-2xl" src="<%= journal.image%>" />
             <p class="mt-10 mb-10 text-orange-900 text-sm text-center"><%= journal.createdAt %></p>
-            <div class="mt-5 p-8 mt-8 rounded-xl border flex flex-col space-y-12 text-violet-900"><p class="text-center text-red-900 text-underline-offset: auto"><%=journal.title %></p><%= journal.caption %></div>
+            <div class="mt-5 p-8 mt-8 rounded-xl border flex flex-col space-y-12 text-violet-900"><p class="text-center text-red-900 "><%=journal.title %></p><%= journal.caption %></div>
           <a href="/edit/<%=journal._id %>"
               class="edit"><span class="fas fa-edit"></span></a>
 
@@ -57,7 +57,7 @@
   
           <% for(var i=0; i<comments.length; i++) {%> 
             <li class="max-w-sm text-center text-black md:text-left ">
-             <span class= "text-orange-900 px-8"><%= user.userName %> commented -</span><%= comments[i].comment%> 
+             <span class= "text-orange-900 px-8"><%= journal.userName %> commented -</span><%= comments[i].comment%> 
               <hr class="border-gray-400 w-full">
                 </li>
           <% } %>

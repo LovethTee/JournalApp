@@ -40,6 +40,16 @@ module.exports = {
     }
 
   },
+  getEdit: async (req, res) => {
+    try {
+      const journal = await Journal.findById(req.params.id);
+      res.render("edit.ejs", { journal: journal, user: req.user});
+    } catch (err) {
+      console.log(err)
+      return res.render('error/500');
+    }
+
+  },
   //show edit page
   //getEdit: async (req, res) => {
    
@@ -51,14 +61,14 @@ module.exports = {
   //    });
    //   
   //},
-  getEdit: async (req, res) => {
-  try {
-    const journals = await Journal.find({ user: req.user.id });
-    res.render("edit.ejs", { journals: journals, user: req.user });
-  } catch (err) {
-    console.log(err);
-  }
-},
+ // getEdit: async (req, res) => {
+  //try {
+    //const journals = await Journal.find({ user: req.user.id });
+   // res.render("edit.ejs", { journals: journals, user: req.user });
+  //} catch (err) {
+    //console.log(err);
+  //}
+//},
 
   createJournal: async (req, res) => {
     try {
@@ -104,8 +114,9 @@ module.exports = {
 
      await Journal.findOneAndUpdate (
       {
-        _id: req.params.id}, {caption
-        : req.body.caption}
+        title: req.body.title,
+        
+        caption: req.body.caption,}
         
      );
       console.log("Post edited");

@@ -23,6 +23,11 @@ const CommentSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
       },
+      userName: { 
+        type: String, 
+        unique: true,
+        
+       },
 });
     
  module.exports = mongoose.model("Comment", CommentSchema);
