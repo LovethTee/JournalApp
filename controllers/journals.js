@@ -114,7 +114,7 @@ module.exports = {
 
      await Journal.findOneAndUpdate (
       {
-        title: req.body.title,
+        _id: req.params.id,
         
         caption: req.body.caption,}
         

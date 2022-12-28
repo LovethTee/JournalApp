@@ -3,28 +3,29 @@
 <h4 class="text-purple-900 text-xl text-center m-10 font-bold mb-10">Edit Story<i class="fa-solid fa-pen-to-square"></i></h4>
 
 <div class="row justify-center ">
-    <form action="/edit/editJournal/<%= journal.id %>?_method=PUT"
+    <form action="/edit/editJournal/<%= journal.id %>"
       method="POST" class="p-12 m-10 gap-4 flex flex-col justify-center bg-violet-300 rounded-2xl shadow-lg max-w-4xl items-center ">
+      <input type="hidden" name="_method" value="PUT">
       <div class=" text-2xl text-white w-full">
-        <input type="hidden" name="_method" value="PUT">
         <div class="row">
             <div class="input-field">
                 
-                <label for="title" class="form-label text-2xl text-orange-900"><%= journal.title%></label>
-                <input type="text" class="form-control" id="title" name="title">
+                <label for="title" class="form-label text-2xl text-orange-900 hidden">Title</label>
+                <input type="text" class="form-control flex-row" id="title" name="title" value="<%= journal.title%>">
+
             </div>
 
         </div>
 
         
-        <div class="row">
+        <div class="justify-center">
             <div class="input-field justify-center flex">
-              <label for="caption" class="form-label text-2xl text-orange-900">Edit Your Story</label>
-               <p class="form-control  border flex flex-col bg-violet-400 w-100 max-w-4xl h-100 p-5 space-y-3 " id="caption" name="caption"><%= journal.caption%></p>
+              <h5 class="form-label text-2xl text-orange-900">Edit Your Story</h5>
+               <textarea class="form-control  border flex flex-col bg-violet-400 w-100 max-w-4xl h-100 p-5 space-y-3 " id="caption" name="caption"><%= journal.caption%></textarea>
             </div>
         </div>
         <div class=" flex flex-row mt-32">
-          <button class="bg-fuchsia-300 rounded-xl text-white px-5 py-2 justify-center items-center hover:bg-red-400 mt-4 mb-4 ">Submit</button>
+          <input type="submit" value="Save" class="bg-fuchsia-300 rounded-xl text-white px-5 py-2 justify-center items-center hover:bg-red-400 mt-4 mb-4 ">
           <button class="bg-fuchsia-900  rounded-xl text-white px-5 py-2 justify-center items-center hover:bg-red-400 mt-4 mb-4 "><a href="/profile">Cancel</a></button>
           
         </div>
